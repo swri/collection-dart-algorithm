@@ -2,8 +2,8 @@
 Collection Algorithm | Dart Program Languange 
 ## Menggunakan Bahasa Pemrograman Dart
 ## List of Algorithm
-1. Aho Corasick<br/>               26. Knapsack
-2. Astar Algorithm            27. Knuth Morris Pratt (KMP)
+1. Aho Corasick &nbsp;        26. Knapsack
+2. Astar Algorithm &emsp;     27. Knuth Morris Pratt (KMP)
 3. Bellman Ford               28. Kruskal MST (Minimum Spawning Tree)
 4. Binary Search              29. Linear Search
 5. Booyer moore               30. Longest Common Subsequence
@@ -27,5 +27,6 @@ Collection Algorithm | Dart Program Languange
 23. Insertion Sort            48. Ternary Search
 24. Interpolation Search      49. Time Sort
 25. Jump Search               50. Z Linear
-
+<br/>   
 ## Include Paper for knowledge
+<br/>   
