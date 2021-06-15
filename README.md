@@ -19,13 +19,13 @@ Collection Algorithm | Dart Program Languange
 15. Exchange Sort &emsp;&emsp;&emsp; 40. Quick Sort
 16. Exhaustic Search &emsp;&emsp;&emsp; 41. Rabin Karp
 17. Exponential Search &emsp;&emsp;&emsp; 42. Radix Sort
-18. Fibonacci Search &emsp;&emsp;&emsp; 43. Selection Sort
+18. Fibonacci Search &nbsp;&nbsp;&nbsp; 43. Selection Sort
 19. Floyd Warshall &emsp;&emsp;&emsp; 44. Shell Sort
 20. Gauss Seidel &emsp;&emsp;&emsp; 45. Shortest Common Supersequence
 21. Gnome Sort &emsp;&emsp;&emsp; 46. Stooge Sort
-22. Heap Sort &emsp;&emsp;&emsp; 47. Stressen
+22. Heap Sort &nbsp;&nbsp;&nbsp; 47. Stressen
 23. Insertion Sort &emsp;&emsp;&emsp; 48. Ternary Search
-24. Interpolation Search &emsp;&emsp;&emsp; 49. Time Sort
-25. Jump Search &emsp;&emsp;&emsp; 50. Z Linear   
+24. Interpolation Search &nbsp;&nbsp;&nbsp; 49. Time Sort
+25. Jump Search &nbsp;&nbsp;&nbsp; 50. Z Linear   
 ## Include Paper for knowledge
 <br/>   
