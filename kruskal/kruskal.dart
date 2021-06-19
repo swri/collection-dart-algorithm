@@ -1,13 +1,13 @@
 class Kruskal {
   late int e;
-  List<List<int>> graphM = [];
-  List<List<int>> result = [];
+  List<List> graphM = [];
+  List<List> result = [];
 
   getResult() {
     return result;
   }
 
-  Kruskal(List<List<int>> list) {
+  Kruskal(List<List> list) {
     this.graphM = list;
   }
 
@@ -20,8 +20,8 @@ class Kruskal {
   }
 
   union(List parent, List rank, int x, int y) {
-    var xroot = find(parent, x);
-    var yroot = find(parent, y);
+    int xroot = find(parent, x);
+    int yroot = find(parent, y);
     if (rank[xroot] < rank[yroot]) {
       parent[xroot] = yroot;
     } else if (rank[xroot] > rank[yroot]) {
@@ -34,11 +34,8 @@ class Kruskal {
 
   sort(List arr) {
     int n = arr.length;
-    if (arr.length == 0) {
-      n = 0;
-    }
     for (int i = 1; i < n; ++i) {
-      int key = arr[i][2];
+      var key = arr[i][2];
       var key1 = arr[i];
       int j = i - 1;
       while (j >= 0 && arr[j][2] > key) {
@@ -54,8 +51,8 @@ class Kruskal {
     int i = 0;
     int e = 0;
     sort(graphM);
-    var parent = [];
-    var rank = [];
+    List parent = [];
+    List rank = [];
 
     for (int i = 0; i < this.graphM.length; i++) {
       for (int j = 0; j < 2; j++) {
@@ -70,32 +67,75 @@ class Kruskal {
       parent.add(k);
       rank.add(0);
     }
+    // print(graphM);
 
     while (e < max - 1) {
       int u = graphM[i][0];
       int v = graphM[i][1];
-      int w = graphM[i][2];
+      var w = graphM[i][2];
       i = i + 1;
+
       int x = find(parent, u);
       int y = find(parent, v);
+      // print('x: $x,y: $y');
       if (x != y) {
         e = e + 1;
         result.add([u, v, w]);
         union(parent, rank, x, y);
       }
+      // print('parent $parent');
+      // print('rank $rank');
+      // print('result $result\n');
     }
   }
 }
 
 main(List<String> args) {
-  List<List<int>> list = [
-    [0, 1, 2],
-    [1, 2, 3],
-    [0, 3, 6],
-    [1, 3, 8],
-    [1, 4, 5],
-    [2, 4, 7],
-    [3, 4, 9],
+  //     10
+  // 0--------1
+  // | \ |
+  // 6| 5\ |15
+  // | \ |
+  // 2--------3
+
+  //1. Mengurutkan node weight yang paling kecil
+  //2. pilih node weight paling kecil, nilai yang paling kecil akan di jadikan
+  //parent and rank pada coding diatas diberikan union sebagai algoritma
+  //pengecek apakah terjadi cycle
+  //3. ulangi hingga nilai node terakhir habis
+
+  List<List> list = [
+    [0, 1, 11],
+    [0, 2, 13],
+    [0, 3, 13],
+    [1, 4, 13],
+    [1, 5, 8],
+    [2, 3, 8],
+    [2, 11, 15],
+    [3, 11, 17],
+    [4, 6, 6],
+    [5, 20, 14],
+    [5, 7, 11],
+    [5, 8, 14],
+    [6, 18, 6.5],
+    [6, 19, 5],
+    [7, 9, 3],
+    [7, 20, 7],
+    [8, 12, 35],
+    [8, 10, 6],
+    [9, 16, 7],
+    [10, 13, 27],
+    [10, 23, 4],
+    [11, 12, 5],
+    [12, 13, 6],
+    [13, 14, 4],
+    [14, 15, 12],
+    [18, 6, 6.5],
+    [18, 19, 9],
+    [18, 22, 20],
+    [19, 20, 21.5],
+    [19, 21, 9],
+    [23, 17, 8],
   ];
 
   print('Sebelum : $list\n');
@@ -109,12 +149,12 @@ main(List<String> args) {
   for (int i = 0; i < result.length; i++) {
     int u = result[i][0];
     int v = result[i][1];
-    int w = result[i][2];
+    var w = result[i][2];
     print('$u -- $v == $w ');
   }
-  int sum = 0;
+  double sum = 0;
   for (int i = 0; i < result.length; i++) {
-    int temp = result[i][2];
+    var temp = result[i][2];
     sum += temp;
   }
   print('\nPanjang Node: $sum');
